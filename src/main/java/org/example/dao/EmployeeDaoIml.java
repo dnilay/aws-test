@@ -17,7 +17,7 @@ public class EmployeeDaoIml implements EmployeeDao {
         String firstName=employee.getFirstName();
         String lastName=employee.getLastName();
         String email=employee.getEmail();
-        PreparedStatement preparedStatement=connection.prepareStatement("insert into employee(employee_id,first_name,last_name,email) values(?,?,?,?))");
+        PreparedStatement preparedStatement=connection.prepareStatement("insert into employee(employee_id,first_name,last_name,email) values(?,?,?,?)");
         preparedStatement.setInt(1,id);
         preparedStatement.setString(2,firstName);
         preparedStatement.setString(3,lastName);
