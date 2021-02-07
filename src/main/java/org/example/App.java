@@ -2,6 +2,7 @@ package org.example;
 
 
 import org.example.dao.EmployeeDao;
+import org.example.dao.EmployeeDaoIml;
 import org.example.model.Employee;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -24,7 +25,7 @@ public class App
         String email=scanner.next();
         Employee employee=new Employee(new Random().nextInt(1000),firstName,lastName,email);
         ClassPathXmlApplicationContext context=new ClassPathXmlApplicationContext("applicationContext.xml");
-        EmployeeDao employeeDao=context.getBean("",EmployeeDao.class);
+        EmployeeDao employeeDao=context.getBean("employeeDao", EmployeeDao.class);
         employeeDao.createEmployee(employee);
 
     }
